@@ -11,6 +11,7 @@ import OrgDetail from '../components/Org/OrgDetail'
 import PersonCard from '../components/Person/PersonCard'
 import PersonDetail from '../components/Person/PersonDetail'
 import RoutePush, { RouteBack, RouteReplace } from '../components/examples/RoutePush'
+import UploadImage from '../components/UploadImage/UploadImage'
 const org = {
   _id: 'f34gb2bh24b24b2',
   name: 'OMGTech',
@@ -45,6 +46,7 @@ const UserProp = ({ loggedUser }) =>
 const TestPage = ({ ...props }) =>
   <A4>
     <Head><title>Voluntari.ly Tests</title></Head>
+    <UploadImage />
     <h1>Tests</h1>
     <Hello />
     <IntlDemo />
