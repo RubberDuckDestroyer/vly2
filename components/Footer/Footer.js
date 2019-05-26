@@ -91,7 +91,6 @@ const Footer = ({ isAuthenticated, ...props }) => (
           <a href='https://www.pamfergusson.org.nz/' target='_blank'>
             Pam Fergussion Charitable Trust
           </a>{' '}
-          lol
         </TextP>
       </FooterText>
       <Spacer />
@@ -106,7 +105,7 @@ const Footer = ({ isAuthenticated, ...props }) => (
           <br />
           <MenuItem href='/business'>For Businesses</MenuItem>
           <br />
-          <MenuItem href='/government'>For Governments</MenuItem>
+          <MenuItem href='/agencies'>For Agencies</MenuItem>
           <br />
         </FooterGridItem>
 
