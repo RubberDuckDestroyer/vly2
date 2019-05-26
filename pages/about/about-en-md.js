@@ -1,7 +1,10 @@
 /* eslint-disable max-len */
 export default () => `
-# Hello! You have stumbled upon an awesome open-source project.
-—
+# About Voluntari.ly
+
+## Industry in the classroom.
+
+### Hello! You have stumbled upon an awesome open-source project.
 
 Voluntarily connects volunteers with classrooms to teach science, technology, engineering, entrepreneurship, arts and design with engaging content supplied by New Zealand’s leading innovators in educational content.
 

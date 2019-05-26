@@ -26,19 +26,13 @@ const AboutSection = styled.div`
   margin: 0 0;
 
   h1 {
-    font-size: 4rem;
-    letter-spacing: -3px;
+    font-size: 2rem;
+    letter-spacing: 1px;
     font-weight: bold;
     color: gray;
   }
 
-  p {
-    font-size: 2rem;
-    letter-spacing: -1.3px;
-    font-weight: 400;
-    color: #333;
-  }
-
+ 
   @media screen and (min-width: 768px) and (max-width: 1025px) {
     width: calc(100vw - 4rem);
     margin: 2rem 0 2rem 0;
