@@ -1,6 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Button, Input } from 'antd'
+import Router from 'next/router'
+import { ROUTE_SEARCH } from '../../config/constants';
+
 const Search = Input.Search
 
 // this is the big container block that holds the container together lol
@@ -232,6 +235,18 @@ const SearchBox = styled.div`
 
 // end right hand copy and CTA side
 
+const handleSearch = value => {
+  if (!value) {
+    return false;
+  }
+  Router.push({
+    pathname: ROUTE_SEARCH,
+    query: {
+      q: value
+    }
+  })
+}
+
 // begin actual component
 const Hero = ({ ...props }) => (
   <AwesomeHeroContainer>
@@ -254,12 +269,12 @@ const Hero = ({ ...props }) => (
           enterButton='Search'
           size='large'
           // eslint-disable-next-line no-console
-          onSearch={value => console.log(value)}
+          onSearch={handleSearch}
         />
       </SearchBox>
       <br />
       <br />
-      <Button type='secondary' shape='round' size='large' href='/about'>
+      <Button type='secondary' shape='round' size='large'>
         Learn more
       </Button>
     </HeroRight>

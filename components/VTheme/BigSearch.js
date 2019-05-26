@@ -48,23 +48,30 @@ const FilterItem = styled.a`
   font-weight: bold;
 `
 
-const BigSearch = (...props) => (
-  <SearchContainer>
-    <SearchTitle>Search</SearchTitle>
-    <SearchInputContainer>
-      <Search
-        size='large'
-        placeholder="try 'building robots' "
-        enterButton='Search'
-      />
-    </SearchInputContainer>
-    <SearchFilterText>Filter by:</SearchFilterText>
-    <FilterItem>Date</FilterItem>
-    <FilterItem>Location</FilterItem>
-    <FilterItem>Categories</FilterItem>
-    <FilterItem>Impact</FilterItem>
-  </SearchContainer>
-)
+function BigSearch(props) {
+  const {
+    query
+  } = props
+
+  return (
+    <SearchContainer>
+      <SearchTitle>Search</SearchTitle>
+      <SearchInputContainer>
+        <Search
+          size='large'
+          placeholder="try 'building robots' "
+          enterButton='Search'
+          value={query}
+        />
+      </SearchInputContainer>
+      <SearchFilterText>Filter by:</SearchFilterText>
+      <FilterItem>Date</FilterItem>
+      <FilterItem>Location</FilterItem>
+      <FilterItem>Categories</FilterItem>
+      <FilterItem>Impact</FilterItem>
+    </SearchContainer>
+  )
+}
 
 BigSearch.propTypes = {
   ops: PropTypes.arrayOf(

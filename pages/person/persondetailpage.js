@@ -12,7 +12,9 @@ export class PersonDetailPage extends Component {
   static async getInitialProps ({ store, query }) {
     // Get one Person
     // console.log('PersonDetailPage, GetProps', query)
+    
     try {
+      console.log(query)
       const people = await store.dispatch(reduxApi.actions.people.get(query))
       // console.log('got person for id', query, people)
       return { people, query }

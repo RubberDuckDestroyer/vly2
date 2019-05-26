@@ -5,24 +5,25 @@ import { Spacer } from '../../components/VTheme/VTheme'
 import OpListSection from '../../components/Op/OpListSection'
 import { Component } from 'react'
 import PropTypes from 'prop-types'
+import Router from 'next/router';
+import reduxApi, { withOps } from '../../lib/redux/reduxApi'
 
 // const TitleString = {NumberResults} + "results for " + {SearchQuery}
 
 export class SearchPage extends Component {
-  // state = {}
-  // async componentDidMount () {
-  //   // Get all Ops
+  static getInitialProps({ query }) {
+    console.log('testing ----------------')
+  }
 
-  //   try {
-  //     const ops = await this.props.dispatch(
-  //       reduxApi.actions.opportunities.get()
-  //     )
-  //     // console.log('got ops', ops)
-  //     this.setState({ ops })
-  //   } catch (err) {
-  //     console.log('error in getting ops', err)
-  //   }
-  // }
+  state = {
+    query: {}
+  }
+
+  componentDidMount() {
+    this.setState({
+      query: Router.query
+    })
+  }
 
   render () {
     return (
@@ -52,4 +53,4 @@ SearchPage.propTypes = {
   // dispatch: PropTypes.func.isRequired
 }
 
-export default publicPage(SearchPage)
+export default publicPage(withOps(SearchPage))
