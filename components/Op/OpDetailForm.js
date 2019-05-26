@@ -4,6 +4,7 @@ import { Button, Col, Divider, Form, Input, Radio, Row } from 'antd'
 import PropTypes from 'prop-types'
 import { FormattedMessage } from 'react-intl'
 const { TextArea } = Input
+import EditableTagGroup from '../DynamicTags/OpDetailTags'
 
 function hasErrors (fieldsError) {
   return Object.keys(fieldsError).some(field => fieldsError[field])
@@ -44,6 +45,8 @@ class OpDetailForm extends Component {
     const opDescription = (<FormattedMessage id='opDescription' defaultMessage='Description' description='opportunity Description label in OpDetails Form' />)
     const opImgUrl = (<FormattedMessage id='opImgUrl' defaultMessage='Image Link' description='opportunity Image URL label in OpDetails Form' />)
     const opStatus = (<FormattedMessage id='opStatus' defaultMessage='Status' description='Draft or published status' />)
+    const opTags = (<FormattedMessage id='opTags' defaultMessage='Tags' description='opportunity Tags label in OpDetails Form' />)
+
     const {
       getFieldDecorator, getFieldsError, getFieldError, isFieldTouched
     } = this.props.form
@@ -120,6 +123,33 @@ class OpDetailForm extends Component {
               </Form.Item>
             </Col>
           </Row>
+          <Divider />
+          <Row>
+            <Col
+              xs={{ span: 24 }}
+              md={{ span: 8 }}
+            >
+              <h2>2. What kind of topics does it cover? (optional)</h2>
+              <p>Tell us how to categorize this request so we can tell relevant volunteers 
+                about it. </p>
+            </Col>
+            <Col
+              xs={{ span: 24 }}
+              md={{ span: 16 }}
+            >
+              <Form.Item label={opTags}>
+                {getFieldDecorator('tags', {
+                  rules: [
+                    
+                  ]
+                })
+                (
+                  <EditableTagGroup/>
+                )
+                }
+              </Form.Item>
+            </Col>
+          </Row> 
           <Divider />
           <Row>
             <Col
